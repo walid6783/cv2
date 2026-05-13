@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Walid Ali Mousa | Educational Supervisor & Leadership Portfolio</title>
+  <!-- Google Fonts & modern reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f1f5f9;
+      font-family: 'Inter', sans-serif;
+      color: #0f172a;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* modern container */
+    .container {
+      max-width: 1280px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    /* card style & glassmorphism touches */
+    .card {
+      background: white;
+      border-radius: 2rem;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.02);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      overflow: hidden;
+    }
+
+    /* header profile area */
+    .profile-header {
+      background: linear-gradient(135deg, #0f2b3d 0%, #1b4a6e 100%);
+      padding: 2rem 2rem 2rem 2rem;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      border-radius: 2rem 2rem 0 0;
+    }
+
+    .profile-left {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    .avatar-placeholder {
+      background: #fff1e6;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 15px 25px -8px rgba(0,0,0,0.2);
+      border: 3px solid rgba(255,255,255,0.6);
+    }
+
+    .avatar-placeholder i {
+      font-size: 3.8rem;
+      color: #1b4a6e;
+    }
+
+    .name-title h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.3rem;
+    }
+
+    .name-title p {
+      font-size: 1.1rem;
+      font-weight: 500;
+      background: rgba(255,255,255,0.2);
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      backdrop-filter: blur(2px);
+    }
+
+    .quick-contact {
+      background: rgba(255,255,255,0.1);
+      padding: 0.8rem 1.5rem;
+      border-radius: 1.5rem;
+      font-size: 0.9rem;
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      backdrop-filter: blur(4px);
+    }
+
+    .quick-contact a, .quick-contact span {
+      color: white;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+
+    .quick-contact a:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+
+    /* main grid layout */
+    .dashboard {
+      display: grid;
+      grid-template-columns: 1fr 2.2fr;
+      gap: 1.8rem;
+      margin-top: 1.8rem;
+    }
+
+    /* sidebar styling */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .info-section {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .info-section h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      border-left: 4px solid #1b4a6e;
+      padding-left: 0.8rem;
+    }
+
+    .info-section h3 i {
+      color: #1b4a6e;
+      font-size: 1.2rem;
+    }
+
+    .personal-detail-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #eef2ff;
+      font-size: 0.9rem;
+    }
+
+    .personal-detail-item .label {
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .skill-tag {
+      background: #e9f0f9;
+      color: #1e3a5f;
+      padding: 0.4rem 0.9rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      display: inline-block;
+      margin: 0.25rem 0.25rem;
+    }
+
+    .cert-item {
+      margin-bottom: 0.7rem;
+      font-size: 0.9rem;
+      border-left: 2px solid #cbd5e1;
+      padding-left: 0.8rem;
+    }
+
+    /* main content */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .work-card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      border: 1px solid #eef2ff;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+    }
+
+    .job-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0c4e6e;
+    }
+
+    .job-date {
+      font-weight: 500;
+      background: #f1f5f9;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      color: #2c5a7a;
+    }
+
+    .company {
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 1rem;
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+
+    .job-list {
+      list-style: none;
+      margin-top: 0.8rem;
+    }
+
+    .job-list li {
+      margin-bottom: 0.7rem;
+      display: flex;
+      gap: 0.7rem;
+      font-size: 0.92rem;
+      color: #1e293b;
+    }
+
+    .job-list li i {
+      color: #1b4a6e;
+      margin-top: 0.2rem;
+      font-size: 0.85rem;
+      min-width: 1.2rem;
+    }
+
+    .education-detail, .diploma-detail {
+      margin-bottom: 0.8rem;
+    }
+
+    .degree {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    hr {
+      margin: 1rem 0;
+      border: 0;
+      height: 1px;
+      background: linear-gradient(to right, #e2e8f0, transparent);
+    }
+
+    /* responsive */
+    @media (max-width: 880px) {
+      .dashboard {
+        grid-template-columns: 1fr;
+      }
+      .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .quick-contact {
+        width: 100%;
+        justify-content: space-between;
+      }
+      .container {
+        padding: 1rem;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .profile-left {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .job-header {
+        flex-direction: column;
+        gap: 6px;
+      }
+    }
+
+    .badge-accent {
+      background: #eef2ff;
+      border-radius: 40px;
+      padding: 0.1rem 0.6rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #475569;
+      padding: 1.5rem 0 0.5rem;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .eleot-badge {
+      display: inline-block;
+    }
+    .website-link {
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- main card wrapper -->
+  <div class="card">
+    <!-- modern header with profile + contact glow -->
+    <div class="profile-header">
+      <div class="profile-left">
+        <div class="avatar-placeholder">
+          <img src="./images/image1.jpeg" alt="Profile Image" style="width:100%; height:100%; border-radius:50%;">
+        </div>
+        <div class="name-title">
+          <h1>Walid Ali Mousa</h1>
+          <p>Educational Supervisor & Instructional Leader</p>
+        </div>
+      </div>
+      <div class="quick-contact">
+        <span><i class="fas fa-map-marker-alt"></i> Hafr Albatin, Saudi Arabia</span>
+        <a href="tel:+966536241833"><i class="fas fa-phone-alt"></i> +966 536 241833</a>
+        <a href="mailto:waleed.aly31@gmail.com"><i class="fas fa-envelope"></i> waleed.aly31</a>
+        <a href="https://sites.google.com/view/waleedalimousaportfo" target="_blank"><i class="fas fa-globe"></i> Portfolio</a>
+      </div>
+    </div>
+
+    <!-- main grid content: sidebar + experience -->
+    <div class="dashboard">
+      <!-- LEFT SIDEBAR (Personal, Education, Skills, Certs) -->
+      <div class="sidebar">
+        <!-- Personal details card -->
+        <div class="info-section">
+          <h3><i class="fas fa-user-circle"></i> Personal Details</h3>
+          <div class="personal-detail-item"><span class="label">Date of Birth:</span><span>06 July 1983</span></div>
+          <div class="personal-detail-item"><span class="label">Nationality:</span><span>Egyptian</span></div>
+          <div class="personal-detail-item"><span class="label">Marital Status:</span><span>Married</span></div>
+          <div class="personal-detail-item"><span class="label">Passport:</span><span>A28601387</span></div>
+          <div class="personal-detail-item"><span class="label">Residency:</span><span>Hafr Albatin, KSA</span></div>
+        </div>
+
+        <!-- Education & Diplomas -->
+        <div class="info-section">
+          <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+          <div class="education-detail">
+            <div class="degree">🎓 Bachelor of Arts</div>
+            <div>English Language & Literature <br>Benha University – Egypt (2004)</div>
+          </div>
+          <div class="diploma-detail" style="margin-top: 0.7rem;">
+            <div class="degree">📘 Diploma in Special Education</div>
+            <div>Benha University – Egypt (2005)</div>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="info-section">
+          <h3><i class="fas fa-certificate"></i> Certifications</h3>
+          <div class="cert-item">📌 KSA (Hafr AlBatin Education Administration) – 2019</div>
+          <div class="cert-item">🗣️ Developing Communication Language Competence – 2021</div>
+          <div class="cert-item">📈 Strategic Planning – 2023</div>
+          <div class="cert-item">🔍 Eleot 2.0 – 2023</div>
+          <div class="cert-item">💻 ICDL (International Certification of Digital Literacy)</div>
+        </div>
+
+        <!-- Core Skills (modern tags) -->
+        <div class="info-section">
+          <h3><i class="fas fa-cogs"></i> Core Competencies</h3>
+          <div>
+            <span class="skill-tag">Educational Administration</span>
+            <span class="skill-tag">Institutional Readiness</span>
+            <span class="skill-tag">Curriculum Development</span>
+            <span class="skill-tag">Teacher Training & Mentoring</span>
+            <span class="skill-tag">Distance Learning</span>
+            <span class="skill-tag">Academic Advising</span>
+            <span class="skill-tag">Instructional Leadership</span>
+            <span class="skill-tag">Performance Evaluation</span>
+            <span class="skill-tag">Classroom Observation</span>
+            <span class="skill-tag">Active Learning Strategies</span>
+          </div>
+        </div>
+        <!-- small website hint from original content -->
+        <div class="info-section">
+          <h3><i class="fas fa-link"></i> Digital Portfolio</h3>
+          <div style="font-size:0.85rem; word-break:break-all;">
+            <i class="fas fa-external-link-alt"></i> <a href="https://sites.google.com/view/waleedalimousaportfo" target="_blank" style="color:#1b4a6e; font-weight:500;">waleedalimousa portfolio</a>
+          </div>
+          <div style="margin-top: 10px; font-size:0.8rem; background:#f8fafc; padding:0.5rem; border-radius:12px;">
+            <i class="fas fa-chalkboard"></i> Dynamic supervisor: Instructional leadership, performance evaluation & professional development.
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT MAIN CONTENT: Work History & highlights -->
+      <div class="main-content">
+        <!-- Current Role: Educational Supervisor -->
+        <div class="work-card">
+          <div class="job-header">
+            <div class="job-title">Educational Supervisor</div>
+            <div class="job-date">2013 – Current</div>
+          </div>
+          <div class="company"><i class="fas fa-school"></i> Tarbeat Al-Ajial International School, Hafr AlBatin, Saudi Arabia</div>
+          <ul class="job-list">
+            <li><i class="fas fa-chart-line"></i> Led development & implementation of annual and term-based supervisory plans, enhancing instructional leadership across departments.</li>
+            <li><i class="fas fa-users"></i> Professional Development: Designed and conducted training workshops and seminars for teaching staff, elevating modern pedagogies.</li>
+            <li><i class="fas fa-clipboard-list"></i> Performance Evaluation: Analyzed teacher performance through classroom observations, delivering constructive feedback aligned with international accreditation rubrics.</li>
+            <li><i class="fas fa-star-of-life"></i> Enhanced teacher performance by conducting regular observations and feedback sessions, ensuring active learning strategies meet global standards.</li>
+            <li><i class="fas fa-lightbulb"></i> Improved student outcomes via innovative instructional strategies tailored to individual learner needs and accreditation frameworks.</li>
+          </ul>
+        </div>
+
+        <!-- English Language Teacher (2013-2018) -->
+        <div class="work-card">
+          <div class="job-header">
+            <div class="job-title">English Language Teacher</div>
+            <div class="job-date">2013 – 2018</div>
+          </div>
+          <div class="company"><i class="fas fa-language"></i> Tarbeat Al-Ajial Secondary School, Hafr Al-Batin, Saudi Arabia</div>
+          <ul class="job-list">
+            <li><i class="fas fa-pen-fancy"></i> Created and administered exams assessing fluency in reading, writing, speaking, and comprehension of English language.</li>
+            <li><i class="fas fa-book-open"></i> Planned lessons enhancing vocabulary, sentence structure, and literature-based activities to boost reading & writing proficiency.</li>
+            <li><i class="fas fa-chart-simple"></i> Prepared, administered and corrected weekly tests and examinations to monitor overall student performance and progress.</li>
+            <li><i class="fas fa-comments"></i> Motivated students through constructive feedback, leading to improved language proficiency and classroom engagement.</li>
+          </ul>
+        </div>
+
+        <!-- English Language Teacher (Egypt 2006-2012) -->
+        <div class="work-card">
+          <div class="job-header">
+            <div class="job-title">English Language Teacher</div>
+            <div class="job-date">2006 – 2012</div>
+          </div>
+          <div class="company"><i class="fas fa-chalkboard-user"></i> Tokh Private Schools, Benha, Egypt</div>
+          <ul class="job-list">
+            <li><i class="fas fa-chart-simple"></i> Assessed student progress, providing constructive feedback to motivate improvement in language proficiency.</li>
+            <li><i class="fas fa-hand-sparkles"></i> Established clear classroom management boundaries, fostering a safe and consistent environment for optimal behavior and learning.</li>
+            <li><i class="fas fa-archive"></i> Graded student work based on completion, timeliness, and accuracy; maintained detailed records of grades and performance analytics.</li>
+          </ul>
+        </div>
+
+        <!-- Extra: Highlights about international accreditations & strategic vision -->
+        <div class="work-card" style="background: linear-gradient(120deg, #fef9f0, #ffffff); border-left: 5px solid #1b4a6e;">
+          <div class="job-header">
+            <div class="job-title"><i class="fas fa-trophy"></i> Leadership & Impact Highlights</div>
+          </div>
+          <ul class="job-list">
+            <li><i class="fas fa-check-circle"></i> Strategic planning expertise driving institutional readiness for international accreditation visits (Cognia / NEASC-aligned).</li>
+            <li><i class="fas fa-chalkboard-user"></i> Teacher training expert: outcomes include improved instructional delivery and measurable student growth.</li>
+            <li><i class="fas fa-microphone-alt"></i> Conducted seminars on Eleot 2.0, active learning, and data-driven feedback to support 21st-century classrooms.</li>
+            <li><i class="fas fa-globe-americas"></i> Fluent in Arabic and English, bridging cross-cultural communication and curriculum innovation.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer note with dynamic date and personal motto -->
+    <div class="footer-note">
+      <i class="fas fa-sync-alt"></i> Dynamic educational leader committed to teacher effectiveness & student excellence — <strong>Walid Ali Mousa</strong> 
+      <span style="display: inline-block; margin: 0 4px">•</span> 
+      <i class="fas fa-envelope-open-text"></i> waleed.aly31@gmail.com 
+      <span style="display: inline-block; margin: 0 4px">•</span>
+      <i class="fab fa-linkedin"></i> Portfolio available online
+    </div>
+  </div>
+  <!-- subtle credential note from original doc: ICDL, certifications all mentioned -->
+</div>
+</body>
+</html>
